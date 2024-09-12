@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "complete a backend for our Blog Application with features",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon scr/index.js"
+  },
+  "keywords": [
+    "javascript",
+    "backend",
+    "codewithuday"
+  ],
+  "author": "Uday Sharma",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3"
+  }
+}
