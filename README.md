@@ -3,6 +3,10 @@
 - [Model link](https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj?origin=share)
 
 ---
+## Tech used
+`JavaScript` `Node.js` `MongoDB` `Express.js` `Mongoose` `Jsonwebtoken` `bcrypt` `Cloudinary` `multer`
+
+--- 
 ## Database Connectivity
 ##### Not a good Approach to connect the database directly in the main file
 ```bash
