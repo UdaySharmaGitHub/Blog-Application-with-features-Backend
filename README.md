@@ -133,14 +133,6 @@ class ApiResponse{
 }
 ```
 
-## HTTP response status codes
- - HTTP response status codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes:
-- Informational responses `100 – 199`
-- Successful responses `200 – 299`
-- Redirection messages `300 – 399`
-- Client error responses `400 – 499`
-- Server error responses `500 – 599`
-
 ---
 
 ## How to Upload file in Backend
@@ -211,3 +203,82 @@ export const upload = multer({
     });
 
 ```
+
+---
+
+## HTTP Crash Course
+
+#### HTTP Headers
+- ***metadata*** : key-value sent along with request and response
+
+- Caching , Authentication , manage State
+
+- ***Request Header*** - from Client
+- ***Response Header*** - from Server
+- ***Representation Header*** - encoding / Comrpession
+- ***Payload Header*** - data
+
+#### Most Comman Header
+- ***`Accept : Application / json`***
+- ***`User-Agent`***
+- ***`Authorization`***
+- ***`Content Type`***
+- ***`Cookies`***
+- ***`Cache-Control`***
+
+#### CORS Header
+- ***`Access-Control-Allow-Origin`***
+- ***`Access-Control-Allow-Credentials`***
+- ***`Access-Control-Allow-Method`***
+
+#### Security
+- ***`Cross-Origin-Embedder-Policy`***
+- ***`Cross-origin-Opener-Policy`***
+- ***`Content-Security-Policy`***
+- ***`X-XSS-Protection`***
+
+#### HTTP Methods
+Basic set of Operations That can be used to interact with Server
+- ***`GET`*** : Retrieve data from Server.
+- ***`POST`*** : Create new data on Server(Mostly add).
+- ***`PUT`*** : Update existing data on Server.
+- ***`DELETE`*** : Delete existing data on Server.
+- ***`PATCH`*** : Change part of a resource
+- ***`HEAD`*** : No message body(response header only).
+- ***`OPTION`*** :What operations are available.
+- ***`TRACE`*** : Loopback test (get some data)
+
+## HTTP response status codes
+ - HTTP response status codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes:
+- ***`Informational`*** responses ***`100 – 199`***
+- ***`Successful`*** responses ***`200 – 299`***
+- ***`Redirection`*** messages ***`300 – 399`***
+- ***`Client error`*** responses ***`400 – 499`***
+- ***`Server error`*** responses ***`500 – 599`***
+
+Example:-
+- `100` Continue
+- `102` Proccessing
+- `200` OK
+- `201` Created
+- `202` Accepted
+- `307` Temporary Redirect
+- `308` Permanent Redirect
+- `400` Bad Request
+- `401` Unathourized
+- `402` Payment Required
+- `404` Not Found
+- `500` Internal Server Error
+- `504` Gateway Time Out
+
+
+#### Full form
+- ***`URL`***
+A URI (Uniform Resource Identifier) is a sequence of characters that identifies a logical or physical resource. Usually, but not always, connected to the internet. A URI is used to distinguish one resource from another. URIs allow internet protocols to facilitate interactions between and among these resources. The strings of characters incorporated in a URI serve as identifiers, such as a scheme name and a file path. 
+
+- ***`URI`***
+A URI (Uniform Resource Identifier) is a sequence of characters that identifies a logical or physical resource. Usually, but not always, connected to the internet. A URI is used to distinguish one resource from another. URIs allow internet protocols to facilitate interactions between and among these resources. The strings of characters incorporated in a URI serve as identifiers, such as a scheme name and a file path. 
+
+- ***`URN`***
+
+
