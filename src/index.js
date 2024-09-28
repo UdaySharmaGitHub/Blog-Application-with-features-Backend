@@ -1,6 +1,9 @@
 // require('dotenv').config({path:"./env"})   // its reduce the consistency of code
 
 // import express from 'express'
+
+// importing app.js
+import { app } from './app.js';
 import connectDB from './db/db.js';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
@@ -19,6 +22,6 @@ app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
 })
-.catch((erorr)=>{
+.catch((error)=>{
     console.log("MongoDB is unable to connect",error);
 })

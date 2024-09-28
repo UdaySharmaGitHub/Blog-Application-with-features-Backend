@@ -72,7 +72,8 @@ app.listen(port, () => {
 
 // Higher Order Function (Using Promise)
 const asynHandler =(requestHandle)=>{
-    (req,res,next) =>{
+    // we have to return the promise function
+   return (req,res,next) =>{
         Promise.resolve(requestHandle(req,res,next)).
         catch((error)=> next(error) )
         }
