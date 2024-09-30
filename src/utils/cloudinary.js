@@ -19,9 +19,9 @@ const uploadOnCloudinary = async (localFilePath) =>{
         })
         // file has been successfully upload
         console.log("File hasbeen Successfully uploaded",result.url);   // its is only used for testing purpose
-        // fs.unlink(localFilePath); // directly Upload file to the cloudinary
+        fs.unlinkSync(localFilePath); // directly Upload file to the cloudinary
         return result;
-    } catch (error) {
+    } catch (error) { 
         /*if we have some error or a malicius file is present in the 
         server than we have to unlink that file from our file system */
         fs.unlinkSync(localFilePath)  // remove the locally saved temporay file as the upload operation got failed

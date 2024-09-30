@@ -45,7 +45,13 @@ const registerUser= asynHandler( async(req,res)=>{
     // console.log("req.files",req.files);  // get the output in JSON or Object Format
     // but keep it optional is the best practice
     const avatarLocalPath = req.files?.avatar[0]?.path;
-    const coverImageLocalPath = req.files?.coverImage[0]?.path;
+    //const coverImageLocalPath = req.files?.coverImage[0]?.path;
+
+    let coverImageLocalPath;
+    if (req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length > 0) {
+        coverImageLocalPath = req.files.coverImage[0].path
+    }
+
     // printing the local path of avatar of coverImage
     console.log(`avatarLocalPath : ${avatarLocalPath} and coverImageLocalPath : ${coverImageLocalPath}`);
 
