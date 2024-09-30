@@ -18,7 +18,8 @@ const uploadOnCloudinary = async (localFilePath) =>{
             resource_type: 'auto',
         })
         // file has been successfully upload
-        console.log("File hasbeen Successfully uploaded",result.url);
+        console.log("File hasbeen Successfully uploaded",result.url);   // its is only used for testing purpose
+        // fs.unlink(localFilePath); // directly Upload file to the cloudinary
         return result;
     } catch (error) {
         /*if we have some error or a malicius file is present in the 

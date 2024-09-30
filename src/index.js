@@ -10,7 +10,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
 dotenv.config({
-    path:'./env'
+    path:'./.env'
 })
 
 // This Good Approach

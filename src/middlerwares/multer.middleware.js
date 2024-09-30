@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
     // For unique file or we can use the nano id
     // const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
     // cb(null, file.fieldname + "-" + uniqueSuffix);
-
+ 
     cb(null, file.originalname); // not a good approach because if we have two file of same name
 
   },

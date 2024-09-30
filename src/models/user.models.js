@@ -59,12 +59,12 @@ init (note: init hooks are synchronous)
     JWT Formate
     jwt.sign(payload, secretOrPrivateKey, [options, callback])
 */
-userSchema.pre("save",async (next)=>{
+userSchema.pre("save",async function(next){
     // firstly check the password is changed or not
     if(!this.isModified("password")) return next();
     // bcrypt.hash(data_feild,no_of_rounds)
-    this.password = await bcrypt.hash(this.password,10);
-    next();
+    this.password = await bcrypt.hash(this.password, 10)
+    next()
 })
 
 //  Custom made method in mongoose

@@ -26,7 +26,7 @@ const registerUser= asynHandler( async(req,res)=>{
     */
     // getting the data from the user
     const {username,email,fullName,password} = req.body;
-    console.log("email:",email);
+    // console.log("req.body",req.body);  // get the output in JSON or Object Format
     if(
         [fullName,username,email,password].some((field)=> field?.trim()==="")
     ){
@@ -35,17 +35,18 @@ const registerUser= asynHandler( async(req,res)=>{
 
     // check if user already exists
     // using $or: [array1,array2, ...]
-    const existingUser = User.findOne({
-        $or:[email,username]
+    const existingUser = await User.findOne({
+        $or:[{email},{username}]
     })
     console.log("Existing Uesr:",existingUser);
     if(existingUser) throw new ApiError(409,"User already Exist");
 
     // requset also handles the file
+    // console.log("req.files",req.files);  // get the output in JSON or Object Format
     // but keep it optional is the best practice
     const avatarLocalPath = req.files?.avatar[0]?.path;
     const coverImageLocalPath = req.files?.coverImage[0]?.path;
-
+    // printing the local path of avatar of coverImage
     console.log(`avatarLocalPath : ${avatarLocalPath} and coverImageLocalPath : ${coverImageLocalPath}`);
 
     // Check that the avatar image is present or not
@@ -69,7 +70,7 @@ const registerUser= asynHandler( async(req,res)=>{
     })
     
     // remove password and refresh token field from response
-    const createdUser = User.findById(user._id).select(
+    const createdUser =await User.findById(user._id).select(
         "-password -refreshToken"
     );
 
